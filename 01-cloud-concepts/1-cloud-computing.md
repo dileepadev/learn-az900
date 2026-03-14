@@ -4,8 +4,12 @@ Table of Contents
 
 - [Cloud Computing](#cloud-computing)
   - [What is Cloud Computing?](#what-is-cloud-computing)
+  - [What is Microsoft Azure?](#what-is-microsoft-azure)
+  - [Shared Responsibility Model](#shared-responsibility-model)
   - [Cloud Models](#cloud-models)
-  - [Shared Responsibility](#shared-responsibility)
+  - [Azure Arc](#azure-arc)
+  - [Azure Stack](#azure-stack)
+  - [Serverless Computing](#serverless-computing)
   - [Capital Expenditure vs Operational Expenditure](#capital-expenditure-vs-operational-expenditure)
   - [Consumption-Based Pricing Model](#consumption-based-pricing-model)
 
@@ -13,6 +17,18 @@ Table of Contents
 
 - Cloud computing is the delivery of computing services over the internet.
 - It allows users to access and use resources such as **servers**, **storage**, **databases**, **networking**, **software**, and **analytics** without having to manage physical hardware or infrastructure.
+
+## What is Microsoft Azure?
+
+- Microsoft Azure is a cloud computing platform and service created by Microsoft.
+- It provides a wide range of cloud services, including those for computing, analytics, storage, and networking.
+- Users can choose and configure these services to meet their specific needs, allowing them to build, deploy, and manage applications through Microsoft-managed data centers.
+- Azure supports various programming languages, tools, and frameworks, making it a versatile platform for developers and businesses of all sizes.
+
+## Shared Responsibility Model
+
+- In cloud computing, the shared responsibility model defines the division of responsibilities between the cloud service provider and the customer.
+- See more details in the [Cloud Service Types / Shared Responsibility Model](./3.cloud-service-types.md#shared-responsibility-model) section.
 
 ## Cloud Models
 
@@ -30,11 +46,29 @@ There are three main cloud models:
 3. **Hybrid Cloud**:
    - A combination of public and private cloud services, allowing data and applications to be shared between them.
    - Hybrid cloud provides flexibility and scalability while allowing organizations to maintain control over their data and applications. Examples include Microsoft Azure Arc, which allows organizations to manage and govern resources across on-premises, multi-cloud, and edge environments.
+4. **Multi-Cloud**:
+   - The use of multiple cloud services from different providers to meet specific business needs.
+   - Multi-cloud allows organizations to avoid vendor lock-in and take advantage of the strengths of different cloud providers. For example, an organization might use Microsoft Azure for its AI and machine learning capabilities while using AWS for its storage and database services.
+   - Multi-cloud can provide redundancy and improve resilience by distributing workloads across multiple cloud providers, reducing the risk of downtime or service disruptions. However, it can also introduce complexity in terms of management and integration between different cloud services and providers.
 
-## Shared Responsibility
+## Azure Arc
 
-- In cloud computing, there is a shared responsibility model between the cloud provider and the customer.
-- The cloud provider is responsible for the security of the cloud infrastructure, while the customer is responsible for securing their data and applications.
+- Azure Arc is a service that allows organizations to manage and govern resources across on-premises, multi-cloud, and edge environments.
+- It provides a unified management experience for resources, regardless of where they are located, allowing organizations to use Azure services and tools to manage their entire infrastructure, including resources running in other cloud providers or on-premises data centers.
+- Azure Arc enables organizations to extend Azure services and capabilities to their existing infrastructure, providing flexibility and scalability while maintaining control over their data and applications.
+
+## Azure Stack
+
+- Azure Stack is a hybrid cloud platform that allows organizations to run Azure services in their own data centers.
+- It provides a consistent experience with Azure, allowing organizations to use the same tools and services to manage their on-premises and cloud resources.
+- Azure Stack enables organizations to take advantage of the benefits of cloud computing while maintaining control over their data and applications, making it an ideal solution for organizations with specific regulatory or compliance requirements that require data to be stored on-premises.
+
+## Serverless Computing
+
+- Serverless computing is a cloud computing execution model where the cloud provider dynamically manages the allocation of resources and automatically scales applications based on demand.
+- In a serverless model, developers can focus on writing code and building applications without having to worry about managing servers or infrastructure.
+- Serverless computing allows for greater flexibility and scalability, as resources are automatically provisioned and deprovisioned based on demand, reducing costs and improving efficiency.
+- Azure Functions is an example of a serverless computing service provided by Microsoft Azure, allowing developers to run event-driven code without having to manage infrastructure.
 
 ## Capital Expenditure vs Operational Expenditure
 
