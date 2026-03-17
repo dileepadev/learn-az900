@@ -78,3 +78,8 @@ Table of Contents:
   - [Cloud Computing](./1.cloud-computing.md)
   - [Cloud Benefits](./2.cloud-benifits.md)
   - [Cloud Service Types](./3.cloud-service-types.md)
+- [02 Azure Architecture and Services](/02-azure-architecture-services)
+  - [Azure Architectural Components](./1-azure-architectural-components.md)
+  - [Azure Compute and Networking Services](./2-azure-compute-networking.md)
+  - [Azure Storage Services](./3-azure-storage-services.md)
+  - [Azure Identity, Access, and Security](./4-azure-identity-access-security.md)
