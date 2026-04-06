@@ -46,10 +46,12 @@ There are three main cloud models:
 3. **Hybrid Cloud**:
    - A combination of public and private cloud services, allowing data and applications to be shared between them.
    - Hybrid cloud provides flexibility and scalability while allowing organizations to maintain control over their data and applications. Examples include Microsoft Azure Arc, which allows organizations to manage and govern resources across on-premises, multi-cloud, and edge environments.
-4. **Multi-Cloud**:
-   - The use of multiple cloud services from different providers to meet specific business needs.
-   - Multi-cloud allows organizations to avoid vendor lock-in and take advantage of the strengths of different cloud providers. For example, an organization might use Microsoft Azure for its AI and machine learning capabilities while using AWS for its storage and database services.
-   - Multi-cloud can provide redundancy and improve resilience by distributing workloads across multiple cloud providers, reducing the risk of downtime or service disruptions. However, it can also introduce complexity in terms of management and integration between different cloud services and providers.
+
+**Multi-Cloud**:
+
+- The use of multiple cloud services from different providers to meet specific business needs.
+- Multi-cloud allows organizations to avoid vendor lock-in and take advantage of the strengths of different cloud providers. For example, an organization might use Microsoft Azure for its AI and machine learning capabilities while using AWS for its storage and database services.
+- Multi-cloud can provide redundancy and improve resilience by distributing workloads across multiple cloud providers, reducing the risk of downtime or service disruptions. However, it can also introduce complexity in terms of management and integration between different cloud services and providers.
 
 ## Azure Arc
 
