@@ -55,13 +55,13 @@ There are three main cloud models:
 
 ## Azure Arc
 
-- Azure Arc is a service that allows organizations to manage and govern resources across on-premises, multi-cloud, and edge environments.
+- **Azure Arc is a service that allows organizations to manage and govern resources across on-premises, multi-cloud, and edge environments.**
 - It provides a unified management experience for resources, regardless of where they are located, allowing organizations to use Azure services and tools to manage their entire infrastructure, including resources running in other cloud providers or on-premises data centers.
 - Azure Arc enables organizations to extend Azure services and capabilities to their existing infrastructure, providing flexibility and scalability while maintaining control over their data and applications.
 
 ## Azure Stack
 
-- Azure Stack is a hybrid cloud platform that allows organizations to run Azure services in their own data centers.
+- **Azure Stack is a hybrid cloud platform that allows organizations to run Azure services in their own data centers.**
 - It provides a consistent experience with Azure, allowing organizations to use the same tools and services to manage their on-premises and cloud resources.
 - Azure Stack enables organizations to take advantage of the benefits of cloud computing while maintaining control over their data and applications, making it an ideal solution for organizations with specific regulatory or compliance requirements that require data to be stored on-premises.
 
