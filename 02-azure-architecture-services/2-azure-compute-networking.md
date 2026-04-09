@@ -75,7 +75,7 @@ Table of Contents
 #### Azure Container Apps
 
 - A managed service for running containers that need to scale automatically based on traffic or events.
-- Designed for microservices, API backends, background workers, and event-driven applications.
+- Supports running containerized applications without managing infrastructure.
 - **Best for:** microservices, API backends, background workers, and event-driven applications.
 
 #### Azure Kubernetes Service
@@ -112,7 +112,6 @@ Table of Contents
 - Public endpoints allow resources to be accessed over the internet from anywhere.
 - Private endpoints allow resources to be accessed securely within the Azure network, without exposing them to the internet.
 - VNets can be segmented into subnets, which can be used to organize and secure resources within the VNet.
-- VNet peering allows you to connect VNets together, enabling resources in different VNets to communicate with each other as if they were on the same network.
 - VNet peering allows you to connect VNets together, enabling resources in different VNets to communicate with each other as if they were on the same network.
 
 ### Azure Virtual Private Network (VPN) Gateway
