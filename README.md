@@ -5,10 +5,27 @@ This repository contains the materials and resources for the AZ-900: Microsoft A
 Table of Contents:
 
 - [AZ-900 Course 2026](#az-900-course-2026)
+  - [Content](#content)
   - [Skills measured as of January 14, 2026](#skills-measured-as-of-january-14-2026)
     - [Describe cloud concepts (25–30%)](#describe-cloud-concepts-2530)
     - [Describe Azure architecture and services (35–40%)](#describe-azure-architecture-and-services-3540)
-  - [Content](#content)
+    - [Describe Azure management and governance (30–35%)](#describe-azure-management-and-governance-3035)
+
+## Content
+
+- [01 Cloud Concepts](/01-cloud-concepts)
+  - [Cloud Computing](./1.cloud-computing.md)
+  - [Cloud Benefits](./2.cloud-benifits.md)
+  - [Cloud Service Types](./3.cloud-service-types.md)
+- [02 Azure Architecture and Services](/02-azure-architecture-services)
+  - [Azure Architectural Components](./1-azure-architectural-components.md)
+  - [Azure Compute and Networking Services](./2-azure-compute-networking.md)
+  - [Azure Storage Services](./3-azure-storage-services.md)
+  - [Azure Identity, Access, and Security](./4-azure-identity-access-security.md)
+- [03 Azure Management and Governance](/03-azure-management-governance)
+  - [Cost Management in Azure](./1-cost-management.md)
+  - [Features and Tools for Governance and Compliance](./2-features-tools-for-governance-compliance.md)
+  - [Monitoring Tools in Azure](./3-monitoring-tools.md)
 
 ## Skills measured as of January 14, 2026
 
@@ -72,14 +89,24 @@ Table of Contents:
   - Describe the purpose of the defense-in-depth model
   - Describe the purpose of Microsoft Defender for Cloud
 
-## Content
+### Describe Azure management and governance (30–35%)
 
-- [01 Cloud Concepts](/01-cloud-concepts)
-  - [Cloud Computing](./1.cloud-computing.md)
-  - [Cloud Benefits](./2.cloud-benifits.md)
-  - [Cloud Service Types](./3.cloud-service-types.md)
-- [02 Azure Architecture and Services](/02-azure-architecture-services)
-  - [Azure Architectural Components](./1-azure-architectural-components.md)
-  - [Azure Compute and Networking Services](./2-azure-compute-networking.md)
-  - [Azure Storage Services](./3-azure-storage-services.md)
-  - [Azure Identity, Access, and Security](./4-azure-identity-access-security.md)
+- Describe cost management in Azure
+  - Describe factors that can affect costs in Azure
+  - Explore the pricing calculator
+  - Describe cost management capabilities in Azure
+  - Describe the purpose of tags
+- Describe features and tools in Azure for governance and compliance
+  - Describe the purpose of Microsoft Purview in Azure
+  - Describe the purpose of Azure Policy
+  - Describe the purpose of resource locks
+- Describe features and tools for managing and deploying Azure resources
+  - Describe the Azure portal
+  - Describe Azure Cloud Shell, including Azure Command-Line Interface (CLI) and Azure PowerShell
+  - Describe the purpose of Azure Arc
+  - Describe infrastructure as code (IaC)
+  - Describe Azure Resource Manager (ARM) and ARM templates
+- Describe monitoring tools in Azure
+  - Describe the purpose of Azure Advisor
+  - Describe Azure Service Health
+  - Describe Azure Monitor, including Log Analytics, Azure Monitor alerts, and Application Insights
