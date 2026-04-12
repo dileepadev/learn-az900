@@ -25,7 +25,8 @@ Table of Contents:
 - [03 Azure Management and Governance](/03-azure-management-governance)
   - [Cost Management in Azure](./1-cost-management.md)
   - [Features and Tools for Governance and Compliance](./2-features-tools-for-governance-compliance.md)
-  - [Monitoring Tools in Azure](./3-monitoring-tools.md)
+  - [Features and Tools for Managing and Deploying Azure Resources](./3-features-tools-for-managing-deploying.md)
+  - [Monitoring Tools in Azure](./4-monitoring-tools.md)
 
 ## Skills measured as of January 14, 2026
 
