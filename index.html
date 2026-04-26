@@ -48,21 +48,69 @@
       <div class="ambient ambient-two"></div>
 
       <div id="homeView" class="view-panel" style="display: none;">
-        <header class="hero" style="text-align: center; display: block; margin: 60px auto; max-width: 800px;">
-          <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px;">Master AZ-900 Fundamentals</h1>
-          <p class="hero-text" style="margin: 0 auto 40px; font-size: 1.2rem;">
-            Your complete destination for passing the AZ-900 Azure Fundamentals certification. 
-            Read through our comprehensive study materials, then test your knowledge.
+        <div class="home-hero">
+
+          <!-- Badge row -->
+          <div class="home-badges">
+            <span class="home-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              Microsoft Certified
+            </span>
+            <span class="home-badge home-badge-blue">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Skills measured as of <strong>January 14, 2026</strong>
+            </span>
+            <span class="home-badge home-badge-green">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+              Last updated <strong>April 26, 2026</strong>
+            </span>
+          </div>
+
+          <!-- Logo + Title -->
+          <div class="home-logo-row">
+            <div class="az900-logo">
+              <img src="./assets/az900-badge.svg" alt="Microsoft Certified: Azure Fundamentals AZ-900 badge" width="128" height="128" />
+            </div>
+            <div>
+              <p class="eyebrow" style="margin: 0 0 10px; text-align: center;">Azure Fundamentals</p>
+              <h1 class="home-title">Master AZ-900<br>Fundamentals</h1>
+            </div>
+          </div>
+
+          <p class="hero-text home-desc">
+            Your complete destination for passing the AZ-900 Azure Fundamentals certification.
+            Study the theory, then validate your knowledge with timed practice papers.
           </p>
-          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-            <a href="#theory" class="primary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.1rem; border-radius: var(--radius-xl);">
-              📖 Read Study Materials
+
+          <div class="home-cta">
+            <a href="#theory" class="primary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.05rem; border-radius: var(--radius-xl);">
+              📖 Study Theory
             </a>
-            <a href="#practice" class="secondary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.1rem; border-radius: var(--radius-xl);">
-              🎯 Start Practice Lab
+            <a href="#practice" class="secondary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.05rem; border-radius: var(--radius-xl);">
+              🎯 Practice Lab
             </a>
           </div>
-        </header>
+
+          <!-- Domain coverage cards -->
+          <div class="home-domains">
+            <div class="home-domain-card">
+              <span class="home-domain-pct">25–30%</span>
+              <strong>Cloud Concepts</strong>
+              <p>Cloud computing, service types, consumption model</p>
+            </div>
+            <div class="home-domain-card">
+              <span class="home-domain-pct">35–40%</span>
+              <strong>Azure Architecture & Services</strong>
+              <p>Compute, networking, storage, identity & security</p>
+            </div>
+            <div class="home-domain-card">
+              <span class="home-domain-pct">30–35%</span>
+              <strong>Management & Governance</strong>
+              <p>Cost management, compliance, monitoring tools</p>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <div id="theoryView" class="view-panel" style="display: none; display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start;">

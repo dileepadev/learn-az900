@@ -199,6 +199,152 @@ strong,
   font-weight: 600;
 }
 
+/* ── Home page ─────────────────────────────────────────── */
+
+#homeView {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 36px;
+  padding: 20px 0;
+}
+
+.home-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.home-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  background: rgba(16, 33, 59, 0.05);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-badge-blue {
+  background: var(--primary-soft);
+  border-color: rgba(15, 142, 207, 0.3);
+  color: var(--primary);
+}
+
+.home-badge-green {
+  background: var(--success-soft);
+  border-color: rgba(15, 159, 127, 0.3);
+  color: var(--success);
+}
+
+.home-logo-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.az900-logo {
+  flex-shrink: 0;
+  filter: drop-shadow(0 12px 32px rgba(0, 120, 212, 0.35));
+  transition: transform 0.3s ease;
+}
+.az900-logo:hover {
+  transform: scale(1.05);
+}
+
+.home-title {
+  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  line-height: 1.05;
+  margin: 0;
+  background: linear-gradient(135deg, var(--ink) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-desc {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 65ch;
+  color: var(--muted);
+  margin: 0;
+}
+
+.home-cta {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.home-domains {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin-top: 18px;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .home-domains {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-domain-card {
+  background: var(--panel-solid);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.home-domain-pct {
+  font-family: "Sora", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.home-domain-card strong {
+  font-size: 1.05rem;
+  color: var(--ink);
+  margin-top: 4px;
+}
+
+.home-domain-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 .ambient {
   position: fixed;
   border-radius: 999px;
