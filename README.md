@@ -14,24 +14,27 @@ Table of Contents:
 
 ## Content
 
-- [01 Cloud Concepts](/01-cloud-concepts)
-  - [Cloud Computing](./1.cloud-computing.md)
-  - [Cloud Benefits](./2.cloud-benifits.md)
-  - [Cloud Service Types](./3.cloud-service-types.md)
-- [02 Azure Architecture and Services](/02-azure-architecture-services)
-  - [Azure Architectural Components](./1-azure-architectural-components.md)
-  - [Azure Compute and Networking Services](./2-azure-compute-networking.md)
-  - [Azure Storage Services](./3-azure-storage-services.md)
-  - [Azure Identity, Access, and Security](./4-azure-identity-access-security.md)
-- [03 Azure Management and Governance](/03-azure-management-governance)
-  - [Cost Management in Azure](./1-cost-management.md)
-  - [Features and Tools for Governance and Compliance](./2-features-tools-for-governance-compliance.md)
-  - [Features and Tools for Managing and Deploying Azure Resources](./3-features-tools-for-managing-deploying.md)
-  - [Monitoring Tools in Azure](./4-monitoring-tools.md)
+- [01 Cloud Concepts](./docs/modules/01-cloud-concepts)
+  - [Cloud Computing](./docs/modules/01-cloud-concepts/1-cloud-computing.md)
+  - [Cloud Benefits](./docs/modules/01-cloud-concepts/2.cloud-benifits.md)
+  - [Cloud Service Types](./docs/modules/01-cloud-concepts/3.cloud-service-types.md)
+- [02 Azure Architecture and Services](./docs/modules/02-azure-architecture-services)
+  - [Azure Architectural Components](./docs/modules/02-azure-architecture-services/1-azure-architectural-components.md)
+  - [Azure Compute and Networking Services](./docs/modules/02-azure-architecture-services/2-azure-compute-networking.md)
+  - [Azure Storage Services](./docs/modules/02-azure-architecture-services/3-azure-storage.md)
+  - [Azure Identity, Access, and Security](./docs/modules/02-azure-architecture-services/4-azure-identity-access-security.md)
+- [03 Azure Management and Governance](./docs/modules/03-azure-management-governance)
+  - [Cost Management in Azure](./docs/modules/03-azure-management-governance/1-cost-management.md)
+  - [Features and Tools for Governance and Compliance](./docs/modules/03-azure-management-governance/2-governance-compliance.md)
+  - [Features and Tools for Managing and Deploying Azure Resources](./docs/modules/03-azure-management-governance/3-managing-deploying-azure-resources.md)
+  - [Monitoring Tools in Azure](./docs/modules/03-azure-management-governance/4-monitoring-tools.md)
 
 ## Practice Test Web App
 
-The interactive AZ-900 practice test app lives in the `docs/` folder so it can be published directly with GitHub Pages.
+The interactive AZ-900 study hub now lives at the repository root. It combines:
+
+- theory content rendered from the markdown files in `docs/modules/`
+- the interactive AZ-900 practice lab
 
 Features included:
 
@@ -43,7 +46,7 @@ Features included:
 Local preview:
 
 ```bash
-python -m http.server 4173 --directory docs
+python -m http.server 4173
 ```
 
 GitHub Pages deployment:
@@ -51,7 +54,7 @@ GitHub Pages deployment:
 1. Push the repository to GitHub.
 2. Open **Settings > Pages**.
 3. Set **Source** to **Deploy from a branch**.
-4. Choose the `main` branch and the `/docs` folder.
+4. Choose the `main` branch and the `/ (root)` folder.
 5. Save the configuration.
 
 ## Skills measured as of January 14, 2026
