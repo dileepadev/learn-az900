@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="./styles.css" />
     <script>
       (function() {
@@ -27,42 +28,83 @@
     </script>
   </head>
   <body>
+    <nav class="top-nav">
+      <div class="nav-content">
+        <div class="nav-brand" style="cursor: pointer" onclick="window.location.hash=''">
+          <strong>AZ-900 Hub</strong>
+        </div>
+        <div class="nav-links">
+          <a href="#theory" class="text-button" id="navTheory">Theory & Docs</a>
+          <a href="#practice" class="text-button" id="navPractice">Practice Lab</a>
+          <button id="themeToggle" class="ghost-button theme-toggle-btn" aria-label="Toggle theme">
+            <span id="themeIcon">🌓</span> Theme
+          </button>
+        </div>
+      </div>
+    </nav>
+
     <div class="page-shell">
       <div class="ambient ambient-one"></div>
       <div class="ambient ambient-two"></div>
 
-      <header class="hero">
-        <section class="hero-copy panel-card">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-            <p class="eyebrow" style="margin: 0;">Azure Fundamentals • Jan 14 2026 guide</p>
-            <button id="themeToggle" class="ghost-button" style="padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px;" aria-label="Toggle theme">
-              <span id="themeIcon">🌓</span> Theme
-            </button>
-          </div>
-          <h1>AZ-900 Practice Test Lab</h1>
-          <p class="hero-text">
-            Train across 10 full papers with saved progress, flagged questions,
-            instant scoring, and domain-by-domain review.
+      <div id="homeView" class="view-panel" style="display: none;">
+        <header class="hero" style="text-align: center; display: block; margin: 60px auto; max-width: 800px;">
+          <h1 style="font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 20px;">Master AZ-900 Fundamentals</h1>
+          <p class="hero-text" style="margin: 0 auto 40px; font-size: 1.2rem;">
+            Your complete destination for passing the AZ-900 Azure Fundamentals certification. 
+            Read through our comprehensive study materials, then test your knowledge.
           </p>
-        </section>
+          <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="#theory" class="primary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.1rem; border-radius: var(--radius-xl);">
+              📖 Read Study Materials
+            </a>
+            <a href="#practice" class="secondary-button" style="text-decoration: none; padding: 16px 32px; font-size: 1.1rem; border-radius: var(--radius-xl);">
+              🎯 Start Practice Lab
+            </a>
+          </div>
+        </header>
+      </div>
 
-        <aside class="hero-panel">
-          <article class="hero-stat panel-card">
-            <span class="stat-label">Question bank</span>
-            <strong id="heroTotalQuestions">400 questions</strong>
-          </article>
-          <article class="hero-stat panel-card">
-            <span class="stat-label">Practice papers</span>
-            <strong id="heroTotalPapers">10 papers</strong>
-          </article>
-          <article class="hero-stat panel-card">
-            <span class="stat-label">Format</span>
-            <strong>40 questions each</strong>
-          </article>
+      <div id="theoryView" class="view-panel" style="display: none; display: grid; grid-template-columns: 300px 1fr; gap: 32px; align-items: start;">
+        <aside class="sidebar-card doc-sidebar">
+          <h3>Study Modules</h3>
+          <nav id="moduleNav" class="module-nav" style="display: grid; gap: 16px; margin-top: 16px;"></nav>
         </aside>
-      </header>
+        <main class="panel-card markdown-body" id="docContent" style="padding: 40px; border-radius: var(--radius-xl); min-height: 50vh;">
+          <em>Select a module from the sidebar to begin reading.</em>
+        </main>
+      </div>
 
-      <main id="app" class="app-shell" aria-live="polite"></main>
+      <div id="practiceView" class="view-panel" style="display: none;">
+        <header class="hero">
+          <section class="hero-copy panel-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <p class="eyebrow" style="margin: 0;">Azure Fundamentals • Jan 14 2026 guide</p>
+            </div>
+            <h1>AZ-900 Practice Test Lab</h1>
+            <p class="hero-text">
+              Train across 10 full papers with saved progress, flagged questions,
+              instant scoring, and domain-by-domain review.
+            </p>
+          </section>
+
+          <aside class="hero-panel">
+            <article class="hero-stat panel-card">
+              <span class="stat-label">Question bank</span>
+              <strong id="heroTotalQuestions">400 questions</strong>
+            </article>
+            <article class="hero-stat panel-card">
+              <span class="stat-label">Practice papers</span>
+              <strong id="heroTotalPapers">10 papers</strong>
+            </article>
+            <article class="hero-stat panel-card">
+              <span class="stat-label">Format</span>
+              <strong>40 questions each</strong>
+            </article>
+          </aside>
+        </header>
+        <main id="app" class="app-shell" aria-live="polite"></main>
+      </div>
     </div>
 
     <script type="module" src="./app.js"></script>

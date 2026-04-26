@@ -1,3 +1,4 @@
+import { MODULES } from "./data/modules.js";
 import { PAPERS, TOTAL_QUESTIONS, DOMAIN_INFO } from "./data/papers.js";
 
 const STORAGE_KEY = "az900-practice-state-v1";
@@ -10,9 +11,87 @@ const heroTotalPapers = document.getElementById("heroTotalPapers");
 const themeToggle = document.getElementById("themeToggle");
 const themeIcon = document.getElementById("themeIcon");
 
+// Re-usable selections for views
+const views = {
+  home: document.getElementById("homeView"),
+  theory: document.getElementById("theoryView"),
+  practice: document.getElementById("practiceView")
+};
+
+const moduleNavContainer = document.getElementById("moduleNav");
+const docContent = document.getElementById("docContent");
+
 const state = loadState();
 
 initialize();
+
+function initializeRouter() {
+  window.addEventListener('hashchange', handleRoute);
+  
+  if (moduleNavContainer) {
+    let navHtml = '';
+    MODULES.forEach(mod => {
+      navHtml += `<h4 style="margin: 0 0 8px; font-size: 1rem; color: var(--ink);">${mod.title}</h4>`;
+      navHtml += `<div style="display: flex; flex-direction: column; gap: 4px; margin-bottom: 24px;">`;
+      mod.lessons.forEach(lesson => {
+        navHtml += `<a href="#doc-${lesson.id}" class="doc-link" data-path="${lesson.path}">${lesson.title}</a>`;
+      });
+      navHtml += `</div>`;
+    });
+    moduleNavContainer.innerHTML = navHtml;
+  }
+  handleRoute();
+}
+
+function setActiveNav(navId) {
+  document.querySelectorAll('.top-nav .text-button').forEach(btn => btn.style.fontWeight = '400');
+  if (navId) {
+    const el = document.getElementById(navId);
+    if (el) el.style.fontWeight = '700';
+  }
+}
+
+async function handleRoute() {
+  const hash = window.location.hash;
+  
+  Object.values(views).forEach(el => el.style.display = 'none');
+
+  if (hash === '#theory') {
+    views.theory.style.display = 'grid';
+    setActiveNav('navTheory');
+  } else if (hash === '#practice') {
+    views.practice.style.display = 'block';
+    setActiveNav('navPractice');
+  } else if (hash.startsWith('#doc-')) {
+    views.theory.style.display = 'grid';
+    setActiveNav('navTheory');
+    
+    // reset nav styling
+    document.querySelectorAll('.doc-link').forEach(l => l.classList.remove('active'));
+    const targetLink = document.querySelector(`.doc-link[href="${hash}"]`);
+    
+    if (targetLink) {
+      targetLink.classList.add('active');
+      const docPath = targetLink.getAttribute('data-path');
+      docContent.innerHTML = '<em>Loading...</em>';
+      try {
+        const response = await fetch(`./${docPath}`);
+        if (!response.ok) throw new Error('File not found');
+        const markdown = await response.text();
+        docContent.innerHTML = marked.parse(markdown);
+      } catch (err) {
+        docContent.innerHTML = `<em style="color: var(--danger);">Failed to load document: ${err.message}</em>`;
+      }
+    }
+  } else {
+    views.home.style.display = 'block';
+    setActiveNav(null);
+  }
+  
+  if (hash === '#practice' || hash === '') {
+    render();
+  }
+}
 
 function initializeTheme() {
   const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -32,6 +111,7 @@ function handleThemeToggle() {
 
 function initialize() {
   initializeTheme();
+  initializeRouter();
   themeToggle?.addEventListener("click", handleThemeToggle);
   hydrateState();
   syncHeroStats();
