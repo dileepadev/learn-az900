@@ -30,14 +30,19 @@
   <body>
     <nav class="top-nav">
       <div class="nav-content">
-        <div class="nav-brand" style="cursor: pointer" onclick="window.location.hash=''">
+        <a href="#" class="nav-brand" style="cursor: pointer" onclick="window.location.hash=''; return false;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
           <strong>AZ-900 Hub</strong>
-        </div>
+        </a>
         <div class="nav-links">
           <a href="#theory" class="text-button" id="navTheory">Theory & Docs</a>
           <a href="#practice" class="text-button" id="navPractice">Practice Lab</a>
-          <button id="themeToggle" class="ghost-button theme-toggle-btn" aria-label="Toggle theme">
-            <span id="themeIcon">🌓</span> Theme
+          <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <span id="themeIcon" style="font-size: 1.2rem;">🌓</span>
           </button>
         </div>
       </div>

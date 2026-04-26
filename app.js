@@ -44,10 +44,13 @@ function initializeRouter() {
 }
 
 function setActiveNav(navId) {
-  document.querySelectorAll('.top-nav .text-button').forEach(btn => btn.style.fontWeight = '400');
+  document.querySelectorAll('.top-nav .text-button').forEach(btn => {
+    btn.classList.remove('active');
+    btn.style.fontWeight = '';
+  });
   if (navId) {
     const el = document.getElementById(navId);
-    if (el) el.style.fontWeight = '700';
+    if (el) el.classList.add('active');
   }
 }
 
