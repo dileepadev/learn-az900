@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AZ-900 Practice Test Lab</title>
+    <meta
+      name="description"
+      content="Interactive AZ-900 practice test web app with 10 papers and 400 questions aligned to the Jan 14 2026 Microsoft Learn study guide."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      (function() {
+        const savedTheme = localStorage.getItem('az900-theme');
+        if (savedTheme) {
+          document.documentElement.setAttribute('data-theme', savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="ambient ambient-one"></div>
+      <div class="ambient ambient-two"></div>
+
+      <header class="hero">
+        <section class="hero-copy panel-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <p class="eyebrow" style="margin: 0;">Azure Fundamentals • Jan 14 2026 guide</p>
+            <button id="themeToggle" class="ghost-button" style="padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px;" aria-label="Toggle theme">
+              <span id="themeIcon">🌓</span> Theme
+            </button>
+          </div>
+          <h1>AZ-900 Practice Test Lab</h1>
+          <p class="hero-text">
+            Train across 10 full papers with saved progress, flagged questions,
+            instant scoring, and domain-by-domain review.
+          </p>
+        </section>
+
+        <aside class="hero-panel">
+          <article class="hero-stat panel-card">
+            <span class="stat-label">Question bank</span>
+            <strong id="heroTotalQuestions">400 questions</strong>
+          </article>
+          <article class="hero-stat panel-card">
+            <span class="stat-label">Practice papers</span>
+            <strong id="heroTotalPapers">10 papers</strong>
+          </article>
+          <article class="hero-stat panel-card">
+            <span class="stat-label">Format</span>
+            <strong>40 questions each</strong>
+          </article>
+        </aside>
+      </header>
+
+      <main id="app" class="app-shell" aria-live="polite"></main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

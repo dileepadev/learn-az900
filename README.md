@@ -6,6 +6,7 @@ Table of Contents:
 
 - [AZ-900 Course 2026](#az-900-course-2026)
   - [Content](#content)
+  - [Practice Test Web App](#practice-test-web-app)
   - [Skills measured as of January 14, 2026](#skills-measured-as-of-january-14-2026)
     - [Describe cloud concepts (25–30%)](#describe-cloud-concepts-2530)
     - [Describe Azure architecture and services (35–40%)](#describe-azure-architecture-and-services-3540)
@@ -27,6 +28,31 @@ Table of Contents:
   - [Features and Tools for Governance and Compliance](./2-features-tools-for-governance-compliance.md)
   - [Features and Tools for Managing and Deploying Azure Resources](./3-features-tools-for-managing-deploying.md)
   - [Monitoring Tools in Azure](./4-monitoring-tools.md)
+
+## Practice Test Web App
+
+The interactive AZ-900 practice test app lives in the `docs/` folder so it can be published directly with GitHub Pages.
+
+Features included:
+
+- 10 full practice papers
+- 400 questions aligned to the January 14, 2026 study guide
+- Saved browser progress for each paper
+- Flagged questions, instant scoring, and domain breakdown review
+
+Local preview:
+
+```bash
+python -m http.server 4173 --directory docs
+```
+
+GitHub Pages deployment:
+
+1. Push the repository to GitHub.
+2. Open **Settings > Pages**.
+3. Set **Source** to **Deploy from a branch**.
+4. Choose the `main` branch and the `/docs` folder.
+5. Save the configuration.
 
 ## Skills measured as of January 14, 2026
 
