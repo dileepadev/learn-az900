@@ -28,7 +28,7 @@
   --bg-alt: #161b22;
   --ink: #e6edf3;
   --muted: #8b949e;
-  --line: rgba(255, 255, 255, 0.15);
+  --line: rgba(255, 255, 255, 0.08);
   --panel: rgba(22, 27, 34, 0.85);
   --panel-solid: #161b22;
   --primary: #2f81f7;
@@ -420,7 +420,7 @@ strong,
 
 .panel-card {
   background: var(--panel);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--line);
   box-shadow: var(--shadow);
   backdrop-filter: blur(16px);
 }
