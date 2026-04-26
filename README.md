@@ -14,26 +14,26 @@ Table of Contents:
 
 ## Content
 
-- [01 Cloud Concepts](./docs/modules/01-cloud-concepts)
-  - [Cloud Computing](./docs/modules/01-cloud-concepts/1-cloud-computing.md)
-  - [Cloud Benefits](./docs/modules/01-cloud-concepts/2.cloud-benifits.md)
-  - [Cloud Service Types](./docs/modules/01-cloud-concepts/3.cloud-service-types.md)
-- [02 Azure Architecture and Services](./docs/modules/02-azure-architecture-services)
-  - [Azure Architectural Components](./docs/modules/02-azure-architecture-services/1-azure-architectural-components.md)
-  - [Azure Compute and Networking Services](./docs/modules/02-azure-architecture-services/2-azure-compute-networking.md)
-  - [Azure Storage Services](./docs/modules/02-azure-architecture-services/3-azure-storage.md)
-  - [Azure Identity, Access, and Security](./docs/modules/02-azure-architecture-services/4-azure-identity-access-security.md)
-- [03 Azure Management and Governance](./docs/modules/03-azure-management-governance)
-  - [Cost Management in Azure](./docs/modules/03-azure-management-governance/1-cost-management.md)
-  - [Features and Tools for Governance and Compliance](./docs/modules/03-azure-management-governance/2-governance-compliance.md)
-  - [Features and Tools for Managing and Deploying Azure Resources](./docs/modules/03-azure-management-governance/3-managing-deploying-azure-resources.md)
-  - [Monitoring Tools in Azure](./docs/modules/03-azure-management-governance/4-monitoring-tools.md)
+- [01 Cloud Concepts](./docs/01-cloud-concepts)
+  - [Cloud Computing](./docs/01-cloud-concepts/1-cloud-computing.md)
+  - [Cloud Benefits](./docs/01-cloud-concepts/2.cloud-benifits.md)
+  - [Cloud Service Types](./docs/01-cloud-concepts/3.cloud-service-types.md)
+- [02 Azure Architecture and Services](./docs/02-azure-architecture-services)
+  - [Azure Architectural Components](./docs/02-azure-architecture-services/1-azure-architectural-components.md)
+  - [Azure Compute and Networking Services](./docs/02-azure-architecture-services/2-azure-compute-networking.md)
+  - [Azure Storage Services](./docs/02-azure-architecture-services/3-azure-storage.md)
+  - [Azure Identity, Access, and Security](./docs/02-azure-architecture-services/4-azure-identity-access-security.md)
+- [03 Azure Management and Governance](./docs/03-azure-management-governance)
+  - [Cost Management in Azure](./docs/03-azure-management-governance/1-cost-management.md)
+  - [Features and Tools for Governance and Compliance](./docs/03-azure-management-governance/2-governance-compliance.md)
+  - [Features and Tools for Managing and Deploying Azure Resources](./docs/03-azure-management-governance/3-managing-deploying-azure-resources.md)
+  - [Monitoring Tools in Azure](./docs/03-azure-management-governance/4-monitoring-tools.md)
 
 ## Practice Test Web App
 
 The interactive AZ-900 study hub now lives at the repository root. It combines:
 
-- theory content rendered from the markdown files in `docs/modules/`
+- theory content rendered from the markdown files in `docs/`
 - the interactive AZ-900 practice lab
 
 Features included:
