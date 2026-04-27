@@ -930,15 +930,24 @@ function renderExam(paper, session) {
           >
             ${answerRevealed ? "Answer revealed" : "Reveal answer"}
           </button>
-          <button
-            class="primary-button"
-            data-action="next-question"
-            data-paper-id="${paper.id}"
-            data-question-index="${session.currentIndex}"
-            ${session.currentIndex === paper.questions.length - 1 ? "disabled" : ""}
-          >
-            Next question
-          </button>
+          ${session.currentIndex < paper.questions.length - 1 ? `
+            <button
+              class="primary-button"
+              data-action="next-question"
+              data-paper-id="${paper.id}"
+              data-question-index="${session.currentIndex}"
+            >
+              Next question
+            </button>
+          ` : `
+            <button
+              class="secondary-button"
+              data-action="submit-paper"
+              data-paper-id="${paper.id}"
+            >
+              Submit paper
+            </button>
+          `}
         </div>
       </article>
     </section>
