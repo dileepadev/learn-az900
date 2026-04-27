@@ -20,6 +20,10 @@
   --radius-lg: 24px;
   --radius-md: 18px;
   --radius-sm: 14px;
+  --surface: rgba(16, 33, 59, 0.04);
+  --surface-hover: rgba(16, 33, 59, 0.08);
+  --surface: rgba(16, 33, 59, 0.04);
+  --surface-hover: rgba(16, 33, 59, 0.08);
   --transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -31,6 +35,10 @@
   --line: rgba(255, 255, 255, 0.08);
   --panel: rgba(22, 27, 34, 0.85);
   --panel-solid: #161b22;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-hover: rgba(255, 255, 255, 0.08);
   --primary: #2f81f7;
   --primary-soft: rgba(47, 129, 247, 0.15);
   --accent: #d29922;
@@ -84,6 +92,7 @@ select {
 }
 
 button {
+  color: inherit;
   cursor: pointer;
   transition: transform 0.2s ease, var(--transition);
 }
@@ -909,7 +918,7 @@ strong,
 
 .nav-button.is-current {
   background: var(--ink);
-  color: white;
+  color: var(--bg);
 }
 
 .question-panel {
@@ -938,24 +947,29 @@ strong,
   gap: 16px;
   align-items: start;
   padding: 18px 20px;
+  appearance: none;
   border: 1px solid var(--line);
   border-radius: 22px;
-  background: #fff;
+  background: var(--panel-solid);
+  color: var(--ink);
+  box-shadow: var(--shadow-soft);
   text-align: left;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .option-button.is-selected {
-  border-color: rgba(15, 142, 207, 0.42);
-  background: linear-gradient(135deg, rgba(15, 142, 207, 0.12), rgba(15, 159, 127, 0.08));
-  box-shadow: 0 12px 24px rgba(15, 142, 207, 0.12);
+  border-color: var(--primary);
+  background: linear-gradient(135deg, var(--primary-soft), var(--success-soft));
+  box-shadow: 0 12px 24px var(--primary-soft);
+  color: var(--ink);
 }
 
 .option-index {
   width: 44px;
   height: 44px;
   font-weight: 700;
-  background: rgba(16, 33, 59, 0.08);
+  background: var(--surface-hover);
+  color: var(--ink);
 }
 
 .option-button.is-selected .option-index {
@@ -964,6 +978,7 @@ strong,
 }
 
 .option-copy {
+  color: inherit;
   line-height: 1.6;
 }
 
@@ -1053,6 +1068,24 @@ strong,
   display: block;
   margin-top: 6px;
   line-height: 1.55;
+}
+
+[data-theme="dark"] .option-button {
+  background: rgba(230, 237, 243, 0.05);
+  border-color: rgba(230, 237, 243, 0.12);
+}
+
+[data-theme="dark"] .option-button.is-selected {
+  background: linear-gradient(135deg, rgba(47, 129, 247, 0.24), rgba(35, 134, 54, 0.18));
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .option-index {
+  background: rgba(230, 237, 243, 0.1);
+}
+
+[data-theme="dark"] .answer-box {
+  background: rgba(230, 237, 243, 0.05);
 }
 
 .explanation-text {
