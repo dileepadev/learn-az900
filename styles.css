@@ -704,7 +704,7 @@ strong,
 
 .status-pill.warning {
   background: var(--accent-soft);
-  color: #9c6500;
+  color: var(--accent);
 }
 
 .status-pill.danger {
@@ -797,6 +797,17 @@ strong,
   transform: translateY(-1px);
 }
 
+.primary-button:disabled,
+.secondary-button:disabled,
+.ghost-button:disabled,
+.nav-button:disabled,
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+  transform: none;
+  box-shadow: none;
+}
+
 .primary-button {
   color: white;
   background: linear-gradient(135deg, #0f8ecf, #0fb3a2);
@@ -807,6 +818,12 @@ strong,
   color: var(--ink);
   background: linear-gradient(135deg, #f8d473, #f59e0b);
   box-shadow: 0 14px 28px rgba(245, 158, 11, 0.24);
+}
+
+.reveal-button {
+  color: white;
+  background: linear-gradient(135deg, #6d28d9, #a855f7);
+  box-shadow: 0 14px 28px rgba(109, 40, 217, 0.28);
 }
 
 .ghost-button,
@@ -1074,6 +1091,10 @@ strong,
 
 .review-card.is-incorrect {
   border-left-color: var(--danger);
+}
+
+.review-card.is-revealed {
+  border-left-color: var(--accent);
 }
 
 .review-card h3 {

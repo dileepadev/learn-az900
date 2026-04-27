@@ -136,6 +136,7 @@ function createSession(paper) {
   return {
     answers: Array(paper.questions.length).fill(null),
     flagged: Array(paper.questions.length).fill(false),
+    revealed: Array(paper.questions.length).fill(false),
     currentIndex: 0,
     startedAt: null,
     submittedAt: null,
@@ -175,6 +176,10 @@ function normalizeSession(existingSession, paper) {
 
   baseSession.flagged = Array.from({ length: paper.questions.length }, (_, index) => {
     return Boolean(existingSession.flagged?.[index]);
+  });
+
+  baseSession.revealed = Array.from({ length: paper.questions.length }, (_, index) => {
+    return Boolean(existingSession.revealed?.[index]);
   });
 
   baseSession.currentIndex = clampNumber(existingSession.currentIndex, 0, paper.questions.length - 1);
@@ -488,6 +493,16 @@ function toggleFlag(paperId, questionIndex) {
   commitAndRender();
 }
 
+function revealAnswer(paperId, questionIndex) {
+  const session = getSession(paperId);
+  if (!session) {
+    return;
+  }
+
+  session.revealed[questionIndex] = true;
+  commitAndRender();
+}
+
 function goHome() {
   state.activePaperId = null;
   commitAndRender();
@@ -535,6 +550,9 @@ function handleClick(event) {
       break;
     case "next-question":
       setCurrentQuestion(paperId, questionIndex + 1);
+      break;
+    case "reveal-answer":
+      revealAnswer(paperId, questionIndex);
       break;
     case "select-option":
       setAnswer(paperId, questionIndex, optionIndex);
@@ -711,7 +729,32 @@ function renderExam(paper, session) {
   const question = paper.questions[session.currentIndex];
   const selectedAnswer = session.answers[session.currentIndex];
   const questionIsFlagged = session.flagged[session.currentIndex];
+  const answerRevealed = session.revealed[session.currentIndex];
   const questionProgress = ((session.currentIndex + 1) / paper.questions.length) * 100;
+  const userAnswerLabel = isAnswered(selectedAnswer)
+    ? `${OPTION_LABELS[selectedAnswer] ?? selectedAnswer + 1}. ${question.opts[selectedAnswer]}`
+    : "Not answered yet";
+  const correctAnswerLabel = `${OPTION_LABELS[question.a] ?? question.a + 1}. ${question.opts[question.a]}`;
+  const revealTone = !isAnswered(selectedAnswer)
+    ? "warning"
+    : selectedAnswer === question.a
+      ? "success"
+      : "danger";
+  const revealCardClass = !isAnswered(selectedAnswer)
+    ? "is-revealed"
+    : selectedAnswer === question.a
+      ? "is-correct"
+      : "is-incorrect";
+  const revealLabel = !isAnswered(selectedAnswer)
+    ? "Answer revealed"
+    : selectedAnswer === question.a
+      ? "Correct"
+      : "Needs review";
+  const revealHeading = !isAnswered(selectedAnswer)
+    ? "Review the correct answer before moving on."
+    : selectedAnswer === question.a
+      ? "You got this one right."
+      : "Check why the correct answer is different.";
 
   return `
     <section class="workspace">
@@ -823,6 +866,7 @@ function renderExam(paper, session) {
                   data-question-index="${session.currentIndex}"
                   data-option-index="${optionIdx}"
                   aria-pressed="${isSelected}"
+                  ${answerRevealed ? "disabled" : ""}
                 >
                   <span class="option-index">${OPTION_LABELS[optionIdx] ?? optionIdx + 1}</span>
                   <span class="option-copy">${escapeHtml(option)}</span>
@@ -842,6 +886,31 @@ function renderExam(paper, session) {
           </div>
         </div>
 
+        ${answerRevealed ? `
+          <article class="review-card question-reveal ${revealCardClass}">
+            <div class="review-top">
+              <div>
+                <p class="eyebrow">Question result</p>
+                <h3>${revealHeading}</h3>
+              </div>
+              <span class="status-pill ${revealTone}">${revealLabel}</span>
+            </div>
+
+            <div class="answer-grid">
+              <div class="answer-box">
+                <p class="answer-label">Your answer</p>
+                <strong>${escapeHtml(userAnswerLabel)}</strong>
+              </div>
+              <div class="answer-box">
+                <p class="answer-label">Correct answer</p>
+                <strong>${escapeHtml(correctAnswerLabel)}</strong>
+              </div>
+            </div>
+
+            <p class="explanation-text">${escapeHtml(question.exp)}</p>
+          </article>
+        ` : ""}
+
         <div class="question-actions">
           <button
             class="ghost-button"
@@ -851,6 +920,15 @@ function renderExam(paper, session) {
             ${session.currentIndex === 0 ? "disabled" : ""}
           >
             Previous
+          </button>
+          <button
+            class="secondary-button reveal-button"
+            data-action="reveal-answer"
+            data-paper-id="${paper.id}"
+            data-question-index="${session.currentIndex}"
+            ${answerRevealed ? "disabled" : ""}
+          >
+            ${answerRevealed ? "Answer revealed" : "Reveal answer"}
           </button>
           <button
             class="primary-button"
